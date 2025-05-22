@@ -20,13 +20,15 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { sampleAi } from "./ai/templateAi";
+import { madDummyAi } from "./ai/madDummy";
 
 const availableAIs = [
   sampleAi,
+  madDummyAi,
+  drake,
   sortOfSmart,
   brucienAI,
   seamusAi,
-  drake,
   emoRAI,
   targetDummy,
   randoAI,
