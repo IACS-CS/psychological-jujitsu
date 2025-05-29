@@ -4,8 +4,8 @@ export const sampleAi = {
   getNextCard: (hand, targets, opponentPlays) => {
     let nextTarget = targets[targets.length - 1];
 
-    // Si la carta objetivo es 10 o 9, intenta jugar la carta más grande disponible (13, 12, 11)
-    if (nextTarget === 10 || nextTarget === 9) {
+    // Si la carta objetivo es 10, 9 o 11, intenta jugar la carta más grande disponible (13, 12, 11)
+    if (nextTarget === 10 || nextTarget === 9 || nextTarget === 11) {
       // Busca la carta más grande posible entre 13, 12, 11
       const bigCards = [13, 12, 11];
       for (let card of bigCards) {
@@ -17,7 +17,7 @@ export const sampleAi = {
       return Math.max(...hand);
     }
 
-    // Si no es 10 ni 9, juega la carta más baja disponible
+    // Si no es 10, 9 ni 11, juega la carta más baja disponible
     return Math.min(...hand);
   },
 };
