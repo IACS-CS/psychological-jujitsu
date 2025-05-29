@@ -20,9 +20,11 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { sampleAi } from "./ai/templateAi";
+import { hinksLilFriend } from "./ai/hinksLilFriend";
 
 const availableAIs = [
   sampleAi,
+  hinksLilFriend,
   sortOfSmart,
   brucienAI,
   seamusAi,
