@@ -20,9 +20,11 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { sampleAi } from "./ai/templateAi";
+import { megamente } from "./ai/Megamente";
 
 const availableAIs = [
   sampleAi,
+  megamente,
   sortOfSmart,
   brucienAI,
   seamusAi,

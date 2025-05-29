@@ -1,23 +1,27 @@
 export const sampleAi = {
-  name: "Mega mente.",
-  icon: "https://www.sensacine.com.mx/peliculas/pelicula-127741/fotos/foto/", // puedes poner un link de imagen aquí
+  name: "Give Me A Name", // a cute name
+  icon: "-", // an image link
   getNextCard: (hand, targets, opponentPlays) => {
-    let nextTarget = targets[targets.length - 1];
+    let nextTarget = targets[targets.length - 1]; // this is the card we are playing for
+    // implement a strategy -- here's one for example (delete this and replace with your own)
 
-    // Si la carta objetivo es 10, 9 o 11, intenta jugar la carta más grande disponible (13, 12, 11)
-    if (nextTarget === 10 || nextTarget === 9 || nextTarget === 11) {
-      // Busca la carta más grande posible entre 13, 12, 11
-      const bigCards = [13, 12, 11];
-      for (let card of bigCards) {
-        if (hand.includes(card)) {
-          return card;
-        }
+    if (Math.random() > 0.5) {
+      // flip a coin...
+      // 50% chance to play a random card
+      let cardIndex = Math.floor(Math.random() * hand.length);
+      return hand[cardIndex]; // play a random card
+    } else {
+      // otherwise, just play the target if we can...
+      if (hand.includes(nextTarget)) {
+        // If I can, play it!
+        return nextTarget;
+      } else if (hand.includes(nextTarget + 1)) {
+        // If I can't, play the next card up
+        return nextTarget + 1;
+      } else {
+        // If I can't, play the lowest card
+        return Math.min(...hand); // play the lowest card in hand
       }
-      // Si no tiene ninguna de esas, juega la carta más alta disponible
-      return Math.max(...hand);
     }
-
-    // Si no es 10, 9 ni 11, juega la carta más baja disponible
-    return Math.min(...hand);
   },
 };
