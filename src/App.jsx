@@ -19,9 +19,12 @@ import { generateHand, getWinnerIndex } from "./gameLogic";
 import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
+
 import { sampleAi } from "./ai/templateAi";
+import { takeSureBetsAi } from "./ai/takeSureBets";
 
 const availableAIs = [
+  takeSureBetsAi,
   sampleAi,
   sortOfSmart,
   brucienAI,
