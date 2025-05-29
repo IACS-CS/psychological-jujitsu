@@ -1,5 +1,5 @@
 export const victoryAi = {
-  name: "Ultimate Learner",
+  name: "victory 100%",
   icon: "🚀",
   getNextCard: (hand, targets, opponentPlays) => {
     const rounds = targets.length;
