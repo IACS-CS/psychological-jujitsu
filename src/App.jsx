@@ -19,14 +19,25 @@ import { generateHand, getWinnerIndex } from "./gameLogic";
 import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
+import { victoryAi } from "./ai/victoryAi";
+import { batman } from "./ai/batman";
 import { sampleAi } from "./ai/templateAi";
 import { madDummyAi } from "./ai/madDummy";
 import { kendrickAi } from "./ai/kendrickLamar";
+import { hinksLilFriend } from "./ai/hinksLilFriend";
+import { megamente } from "./ai/Megamente";
+import { MetaMind } from "./ai/MetaMind";
+import { takeSureBetsAi } from "./ai/takeSureBets";
+import {tronAI} from "./ai/tronAI";
 
 const availableAIs = [
+  tronAI,
+  takeSureBetsAi,
   sampleAi,
   madDummyAi,
   drake,
+  hinksLilFriend,
+  megamente,
   sortOfSmart,
   brucienAI,
   seamusAi,
@@ -37,6 +48,8 @@ const availableAIs = [
   jimminyCricketAI,
   orderedDummy,
   kendrickAi,
+  batman,
+  MetaMind,
 ];
 
 const GameUI = ({ availableAIs }) => {
