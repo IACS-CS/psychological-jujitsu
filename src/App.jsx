@@ -28,7 +28,8 @@ import { hinksLilFriend } from "./ai/hinksLilFriend";
 import { megamente } from "./ai/Megamente";
 import { MetaMind } from "./ai/MetaMind";
 import { takeSureBetsAi } from "./ai/takeSureBets";
-import {tronAi} from "./ai/tronAI";
+import { tronAi } from "./ai/tronAI";
+import { Tournament } from "./Tournament";
 
 const availableAIs = [
   tronAi,
@@ -253,6 +254,7 @@ const App = () => {
   const UNSET = 0;
   const GAME_MODE = 1;
   const SIM_MODE = 2;
+  const TOURNAMENT_MODE = 3;
   let [gameMode, setGameMode] = useState(0);
   return (
     <div>
@@ -260,6 +262,8 @@ const App = () => {
         <GameUI availableAIs={availableAIs} />
       ) : gameMode === SIM_MODE ? (
         <SimulatorUi availableAIs={availableAIs} />
+      ) : gameMode === TOURNAMENT_MODE ? (
+        <Tournament availableAIs={availableAIs} />
       ) : (
         <div className="startPage">
           <button className="playGame" onClick={() => setGameMode(GAME_MODE)}>
@@ -267,6 +271,12 @@ const App = () => {
           </button>
           <button className="runSim" onClick={() => setGameMode(SIM_MODE)}>
             Run Simulations
+          </button>
+          <button
+            className="runSim"
+            onClick={() => setGameMode(TOURNAMENT_MODE)}
+          >
+            Tournament Mode
           </button>
         </div>
       )}
