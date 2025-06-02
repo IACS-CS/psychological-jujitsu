@@ -22,6 +22,8 @@ import { isValid } from "./validator";
 import { victoryAi } from "./ai/victoryAi";
 import { batman } from "./ai/batman";
 import { sampleAi } from "./ai/templateAi";
+import { madDummyAi } from "./ai/madDummy";
+import { kendrickAi } from "./ai/kendrickLamar";
 import { hinksLilFriend } from "./ai/hinksLilFriend";
 import { megamente } from "./ai/Megamente";
 import { MetaMind } from "./ai/MetaMind";
@@ -32,18 +34,20 @@ const availableAIs = [
   tronAI,
   takeSureBetsAi,
   sampleAi,
+  madDummyAi,
+  drake,
   hinksLilFriend,
   megamente,
   sortOfSmart,
   brucienAI,
   seamusAi,
-  drake,
   emoRAI,
   targetDummy,
   randoAI,
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
+  kendrickAi,
   batman,
   MetaMind,
 ];

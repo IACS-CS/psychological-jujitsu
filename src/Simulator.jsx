@@ -10,7 +10,7 @@ export const SimulatorUi = ({ availableAIs }) => {
     availableAIs[1],
     availableAIs[2],
   ]);
-  let [simsPerClick, setSimsPerClick] = useState(50);
+  let [simsPerClick, setSimsPerClick] = useState(5000);
   let [simData, setSimData] = useState([]);
 
   const handleAIChange = (newAi, idx) => {
