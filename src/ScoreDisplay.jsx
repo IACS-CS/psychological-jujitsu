@@ -3,7 +3,7 @@ import { Card } from "./Card";
 
 // Sam and Tristan
 
-export const ScoreDisplay = ({ values = [], suit = "hearts" }) => {
+export const ScoreDisplay = ({ values = [], suit = "hearts", round = 1 }) => {
   const [justUpdated, setJustUpdated] = useState(false);
   let sum = 0;
   values.forEach((v) => {

@@ -11,7 +11,7 @@ getNextCard: (hand, targets, opponentPlays) => {
   let handA = cardsLeft.filter((card)=>!opponentPlays[0].includes(card))
   let handB = cardsLeft.filter((card)=>!opponentPlays[1].includes(card))
 
-debugger
+
   // Handle special cases for targets 13 and 12
   if (nextTarget === 13) {
     return hand.includes(12) ? 12 : hand[0]; // Return 12 if available

@@ -20,12 +20,19 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { batman } from "./ai/batman";
+import { sampleAi } from "./ai/templateAi";
+import { MetaMind } from "./ai/MetaMind";
+import { takeSureBetsAi } from "./ai/takeSureBets";
+import {tronAI} from "./ai/tronAI";
 
 const availableAIs = [
+  tronAI,
+  takeSureBetsAi,
+  sampleAi,
   sortOfSmart,
   brucienAI,
   seamusAi,
-  drake, // d
+  drake,
   emoRAI,
   targetDummy,
   randoAI,
@@ -33,6 +40,7 @@ const availableAIs = [
   jimminyCricketAI,
   orderedDummy,
   batman,
+  MetaMind,
 ];
 
 const GameUI = ({ availableAIs }) => {
@@ -164,11 +172,15 @@ const GameUI = ({ availableAIs }) => {
     <main>
       <h1 className="header">Psychological Jujitsu</h1>
       <div className="target">
-        <TargetArea
-          target={targets[targetIndex]}
-          trash={trash}
-          suit={targetSuit}
-        />
+        {targetIndex < targets.length ? (
+          <TargetArea
+            target={targets[targetIndex]}
+            trash={trash}
+            suit={targetSuit}
+          />
+        ) : (
+          <div className="game-over">Game Over</div>
+        )}
       </div>
 
       {ais.map((ai, idx) => (
@@ -181,6 +193,7 @@ const GameUI = ({ availableAIs }) => {
           ></AISelector>
 
           <PlayerArea
+            round={targetIndex}
             ai={ai}
             suit={otherSuits[idx]}
             hand={hands[idx]}
