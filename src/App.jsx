@@ -28,10 +28,10 @@ import { hinksLilFriend } from "./ai/hinksLilFriend";
 import { megamente } from "./ai/Megamente";
 import { MetaMind } from "./ai/MetaMind";
 import { takeSureBetsAi } from "./ai/takeSureBets";
-import {tronAI} from "./ai/tronAI";
+import {tronAi} from "./ai/tronAI";
 
 const availableAIs = [
-  tronAI,
+  tronAi,
   takeSureBetsAi,
   sampleAi,
   madDummyAi,
@@ -193,7 +193,7 @@ const GameUI = ({ availableAIs }) => {
       </div>
 
       {ais.map((ai, idx) => (
-        <div className={`aiPlayer player-${idx + 1}`}>
+        <div className={`aiPlayer player-${idx + 1}`} key={idx}>
           <AISelector
             selected={ai}
             onSelect={(newAI) => handleAIChange(newAI, idx)}
