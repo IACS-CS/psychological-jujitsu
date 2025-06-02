@@ -20,9 +20,16 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { victoryAi } from "./ai/victoryAi";
+import { batman } from "./ai/batman";
+import { sampleAi } from "./ai/templateAi";
+import { MetaMind } from "./ai/MetaMind";
+import { takeSureBetsAi } from "./ai/takeSureBets";
+import {tronAI} from "./ai/tronAI";
 
 const availableAIs = [
-  victoryAi,
+  tronAI,
+  takeSureBetsAi,
+  sampleAi,
   sortOfSmart,
   brucienAI,
   seamusAi,
@@ -33,6 +40,8 @@ const availableAIs = [
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
+  batman,
+  MetaMind,
 ];
 
 const GameUI = ({ availableAIs }) => {
