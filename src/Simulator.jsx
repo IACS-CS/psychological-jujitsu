@@ -139,7 +139,7 @@ export const SimulatorUi = ({ availableAIs }) => {
           <div>
             Selected:
             {ais.map((ai) => (
-              <li>{ai.name}</li>
+              <li key={ai.name}>{ai.name}</li>
             ))}
           </div>
           <button onClick={() => setSelectAIMode(false)}>Let's Play!</button>
