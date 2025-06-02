@@ -21,6 +21,7 @@ import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { sampleAi } from "./ai/templateAi";
 import { madDummyAi } from "./ai/madDummy";
+import { kendrickAi } from "./ai/kendrickLamar";
 
 const availableAIs = [
   sampleAi,
@@ -35,6 +36,7 @@ const availableAIs = [
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
+  kendrickAi,
 ];
 
 const GameUI = ({ availableAIs }) => {

@@ -4,7 +4,6 @@ export const madDummyAi = {
   getNextCard: (hand, targets, opponentPlays) => {
     let nextTarget = targets[targets.length - 1];
     let previousTarget = targets[targets.length - 2];
-    // implement a strategy -- here's one for example (delete this and replace with your own)
     if (targets.length === 1) {
       // If this is the first round, play either the highest or lowest card
       if (nextTarget >= 10) {
@@ -13,9 +12,9 @@ export const madDummyAi = {
         return Math.min(...hand);
       }
     } else {
-      if (nextTarget > 10) {
+      let topThreeCards = hand.sort().slice(-3);
+      if (nextTarget >= topThreeCards[0]) {
         // return a random card from top 3 cards in hand
-        let topThreeCards = hand.sort().slice(-3);
         return topThreeCards[Math.floor(Math.random() * topThreeCards.length)];
       } else if (hand.includes(previousTarget)) {
         return previousTarget; // play the previous target
@@ -24,7 +23,7 @@ export const madDummyAi = {
       } else if (hand.includes(previousTarget - 1)) {
         return previousTarget - 1; // play the next card down if I can't play the next card up
       } else {
-        return Math.max(...hand); // play the lowest card in hand
+        return Math.max(...hand); // play the highest card in hand
       }
     }
   },
