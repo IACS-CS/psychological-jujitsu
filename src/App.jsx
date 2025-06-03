@@ -22,6 +22,7 @@ import { isValid } from "./validator";
 import { victoryAi } from "./ai/victoryAi";
 import { batman } from "./ai/batman";
 import { sampleAi } from "./ai/templateAi";
+import { WoatAI } from "./ai/woatAi";
 import { madDummyAi } from "./ai/madDummy";
 import { kendrickAi } from "./ai/kendrickLamar";
 import { hinksLilFriend } from "./ai/hinksLilFriend";
@@ -31,11 +32,17 @@ import { takeSureBetsAi } from "./ai/takeSureBets";
 import { tronAi } from "./ai/tronAI";
 import { Tournament } from "./Tournament";
 
+
 const availableAIs = [
   tronAi,
   takeSureBetsAi,
   sampleAi,
   madDummyAi,
+  WoatAI,
+  kendrickAi,
+  batman,
+  MetaMind,
+  victoryAi,
   drake,
   hinksLilFriend,
   megamente,
@@ -48,9 +55,8 @@ const availableAIs = [
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
-  kendrickAi,
-  batman,
-  MetaMind,
+
+
 ];
 
 const GameUI = ({ availableAIs }) => {
