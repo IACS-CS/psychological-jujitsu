@@ -3,7 +3,7 @@ import { AISelector } from "./AISelector";
 import { generateHand, getWinnerIndex } from "./gameLogic";
 import { isValid } from "./validator";
 
-/* Citation: this was initially vibe-coded with Agend-mode Copilot using GPT-4.1
+/* Citation: this was initially vibe-coded with Agent-mode Copilot using GPT-4.1
 The first draft was unusably bad, so I had GPT o3 rewrite it to refactor and 
 use components.
 
