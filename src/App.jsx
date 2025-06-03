@@ -19,22 +19,44 @@ import { generateHand, getWinnerIndex } from "./gameLogic";
 import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
+import { victoryAi } from "./ai/victoryAi";
+import { batman } from "./ai/batman";
 import { sampleAi } from "./ai/templateAi";
 import { WoatAI } from "./ai/woatAi";
+import { madDummyAi } from "./ai/madDummy";
+import { kendrickAi } from "./ai/kendrickLamar";
+import { hinksLilFriend } from "./ai/hinksLilFriend";
+import { megamente } from "./ai/Megamente";
+import { MetaMind } from "./ai/MetaMind";
+import { takeSureBetsAi } from "./ai/takeSureBets";
+import { tronAi } from "./ai/tronAI";
+import { Tournament } from "./Tournament";
+
 
 const availableAIs = [
+  tronAi,
+  takeSureBetsAi,
   sampleAi,
+  madDummyAi,
+  WoatAI,
+  kendrickAi,
+  batman,
+  MetaMind,
+  victoryAi,
+  drake,
+  hinksLilFriend,
+  megamente,
   sortOfSmart,
   brucienAI,
   seamusAi,
-  drake,
   emoRAI,
   targetDummy,
   randoAI,
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
-  WoatAI,
+
+
 ];
 
 const GameUI = ({ availableAIs }) => {
@@ -178,7 +200,7 @@ const GameUI = ({ availableAIs }) => {
       </div>
 
       {ais.map((ai, idx) => (
-        <div className={`aiPlayer player-${idx + 1}`}>
+        <div className={`aiPlayer player-${idx + 1}`} key={idx}>
           <AISelector
             selected={ai}
             onSelect={(newAI) => handleAIChange(newAI, idx)}
@@ -238,6 +260,7 @@ const App = () => {
   const UNSET = 0;
   const GAME_MODE = 1;
   const SIM_MODE = 2;
+  const TOURNAMENT_MODE = 3;
   let [gameMode, setGameMode] = useState(0);
   return (
     <div>
@@ -245,6 +268,8 @@ const App = () => {
         <GameUI availableAIs={availableAIs} />
       ) : gameMode === SIM_MODE ? (
         <SimulatorUi availableAIs={availableAIs} />
+      ) : gameMode === TOURNAMENT_MODE ? (
+        <Tournament availableAIs={availableAIs} />
       ) : (
         <div className="startPage">
           <button className="playGame" onClick={() => setGameMode(GAME_MODE)}>
@@ -252,6 +277,12 @@ const App = () => {
           </button>
           <button className="runSim" onClick={() => setGameMode(SIM_MODE)}>
             Run Simulations
+          </button>
+          <button
+            className="runSim"
+            onClick={() => setGameMode(TOURNAMENT_MODE)}
+          >
+            Tournament Mode
           </button>
         </div>
       )}
