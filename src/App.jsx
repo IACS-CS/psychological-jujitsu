@@ -20,7 +20,7 @@ import { randoAI } from "./ai/randomAI";
 import { seamusAi } from "./ai/seamusAi";
 import { isValid } from "./validator";
 import { sampleAi } from "./ai/templateAi";
-import { GoatAI } from "./ai/goatAi";
+import { WoatAI } from "./ai/woatAi";
 
 const availableAIs = [
   sampleAi,
@@ -34,7 +34,7 @@ const availableAIs = [
   hinkleAi,
   jimminyCricketAI,
   orderedDummy,
-  GoatAI,
+  WoatAI,
 ];
 
 const GameUI = ({ availableAIs }) => {

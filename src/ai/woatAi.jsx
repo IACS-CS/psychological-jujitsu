@@ -1,9 +1,9 @@
 let highCardsPlayed = 0;
-export const GoatAI = {
-  name: "GoatAI", // a cute name
+export const WoatAI = {
+  name: "WoatAI", // a cute name
   icon: "-", // an image link
   getNextCard: (hand, targets, opponentPlays) => {
-    if ([9, 10, 11, 12, 13].includes(targets[0])) {
+    if ([9, 10, 11, 12, 13].includes(targets[targets.length - 1])) {
       highCardsPlayed++;
     }
     const fullDeck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -39,40 +39,40 @@ export const GoatAI = {
     // If the current prize is the highest, and only you have the highest card, play it!
     if (
       onlyYouHaveHighest &&
-      targets[0] === highestPrizeRemaining &&
+      targets[targets.length - 1] === highestPrizeRemaining &&
       hand.includes(highestRemaining)
     ) {
       return highestRemaining;
     }
 
-    if ([1, 2, 3, 4].includes(targets[0])) {
-      if (hand.includes(targets[0])) {
-        return targets[0];
+    if ([1, 2, 3, 4].includes(targets[targets.length - 1])) {
+      if (hand.includes(targets[targets.length - 1])) {
+        return targets[targets.length - 1];
       }
-      if (hand.includes(targets[0] + 1)) {
-        return targets[0] + 1;
+      if (hand.includes(targets[targets.length - 1] + 1)) {
+        return targets[targets.length - 1] + 1;
       }
-      if (hand.includes(targets[0] - 1)) {
-        return targets[0] - 1;
+      if (hand.includes(targets[targets.length - 1] - 1)) {
+        return targets[targets.length - 1] - 1;
       } else {
         return Math.min(...hand);
       }
     }
-    if ([9, 10, 11, 12, 13].includes(targets[0])) {
+    if ([9, 10, 11, 12, 13].includes(targets[targets.length - 1])) {
       if (highCardsPlayed < 2) {
         return Math.min(...hand);
       } else {
         for (let i = 4; (i = 0); i--) {
-          if (hand.includes(targets[0] + i)) {
-            return targets[0] + i;
+          if (hand.includes(targets[targets.length - 1] + i)) {
+            return targets[targets.length - 1] + i;
           }
         }
-        return Math.min(...hand);
+        return Math.max(...hand);
       }
     }
-    if ([5, 6, 7, 8].includes(targets[0])) {
-      if (hand.includes(targets[0] + 2)) {
-        return targets[0] + 2;
+    if ([5, 6, 7, 8].includes(targets[targets.length - 1])) {
+      if (hand.includes(targets[targets.length - 1] + 2)) {
+        return targets[targets.length - 1] + 2;
       } else {
         return Math.min(...hand);
       }
